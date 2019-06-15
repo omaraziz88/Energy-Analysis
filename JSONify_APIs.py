@@ -5,7 +5,7 @@ engine = create_engine("mysql+pymysql://g9k9yjc8hly0fkfo:mqhya9z2ad0n1lfd@u0zbt1
 latlon_df = pd.read_sql("SELECT * FROM LatLon_Table", engine)
 CO2_emissions_df = pd.read_sql("SELECT * FROM CO2_Emissions", engine)
 CO2_emissions_df_merged=CO2_emissions_df.merge(latlon_df,how='inner',on='Country')
-C02_emissions_api = CO2_emissions_df_merged.to_json(orient = "records")
+CO2_emissions_api = CO2_emissions_df_merged.to_json(orient = "records")
 
 Crude_NGL_Prod_df = pd.read_sql("SELECT * FROM Crude_NGL_Production", engine)
 Crude_NGL_Prod_df_merged=Crude_NGL_Prod_df.merge(latlon_df,how='inner',on='Country')
@@ -41,6 +41,3 @@ Total_Electricity_Prod_api = Total_Electricity_Prod_df_merged.to_json(orient = "
 
 # df5 = pd.read_sql("SELECT * FROM Total_Electricity_Production", engine)
 # api_5 = df5.to_json(orient = "records")
-
-
-
