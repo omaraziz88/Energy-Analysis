@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 import pandas as pd
-engine = create_engine("mysql+pymysql://g9k9yjc8hly0fkfo:mqhya9z2ad0n1lfd@u0zbt18wwjva9e0v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zc17xolxwvozu4xu")
+import os
+engine = create_engine(os.environ.get("JAWSDB_URL"))
 
 latlon_df = pd.read_sql("SELECT * FROM LatLon_Table", engine)
 CO2_emissions_df = pd.read_sql("SELECT * FROM CO2_Emissions", engine)
