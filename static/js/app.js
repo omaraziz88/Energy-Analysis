@@ -1,13 +1,37 @@
 // Store our API endpoint inside queryUrl
+var queryUrl = "https://herokuenergyevolution.herokuapp.com/ee/solar_wind";
+fetch(request, {mode: 'cors'});
+
+d3.json(queryUrl).then(function(data) {
+ // Once we get a response, send the data.features object to the createFeatures function
+ //createFeatures(data.features);
+ console.log(data);
+
+});
+//ABOVE HERE IS FROM ORIGINAL APP.JS
+
+
+
+
+
+// Store our API endpoint inside queryUrl
 var queryUrl = "/ee/gas"
 //gas data
-d3.json(queryUrl, function (data) {
-  file = '../data/countries.geojson';
 
-  d3.json(file).then(countryPolygons => {
-    console.log(countryPolygons);
-    L.geojson(countryPolygons);
+// file = 'static/data/countries.geojson';
+
+
+d3.json(queryUrl).then(function(data) {
+  file = "static/data/countries.geojson";
+
+
+  d3.json(file).then(function(data) {
+    console.log(data);
   });
+  // d3.json(file).then(countryPolygons => {
+  //   console.log(countryPolygons);
+  //   L.geojson(countryPolygons);
+  // });
 
 
   
@@ -96,4 +120,3 @@ d3.json(queryUrl, function (data) {
 //   }).addTo(myMap);
 
 
-}
