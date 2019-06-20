@@ -1,6 +1,8 @@
 from sqlalchemy import create_engine
 import pandas as pd
 import os
+from countries_geojson import countries_geojson
+
 engine = create_engine(os.environ.get("JAWSDB_URL"))
 
 latlon_df = pd.read_sql("SELECT * FROM LatLon_Table", engine)
