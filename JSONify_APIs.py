@@ -27,14 +27,26 @@ for feat in countries_co2_emissions['features']:
             value_2000 = dict["2000"]
             value_2010 = dict["2010"]
             value_2017 = dict["2017"]
-    if value_1990:
+            
+    if value_1990 != "NA":
         feat['properties']["1990"] = value_1990
-    if value_2000:
+    # else:
+    #     del feat['properties']["1990"]
+
+    if value_2000 != "NA":
         feat['properties']["2000"] = value_2000
-    if value_2010:
+    # else:
+    #     del feat['properties']["2000"]
+
+    if value_2010 != "NA":
         feat['properties']["2010"] = value_2010
-    if value_2017:
+    # else:
+    #     del feat['properties']["2010"]
+
+    if value_2017 != "NA":
         feat['properties']["2017"] = value_2017
+    # else:
+    #     del feat['properties']["2017"]
 
     # for i in range(len(CO2_emissions_json)):
     # for i in range(1):
