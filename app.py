@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 import pandas
-from JSONify_APIs import CO2_emissions_api, Crude_NGL_Prod_api, Natural_Gas_Prod_api, Renewables_Electricity_Share_api, Solar_and_Wind_Share_api, Total_Electricity_Prod_api
+from JSONify_APIs_v2_backup import CO2_emissions_api, Crude_NGL_Prod_api, Natural_Gas_Prod_api, Renewables_Electricity_Share_api, Solar_and_Wind_Share_api, Total_Electricity_Prod_api
 import json
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ def index():
 #api route for data to go to client
 @app.route("/ee/CO2")
 def co2():
-    return jsonify(json.loads(CO2_emissions_api))
+    return jsonify(CO2_emissions_api)
 
 @app.route("/ee/liquids")
 def ngl():
