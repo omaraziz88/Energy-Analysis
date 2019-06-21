@@ -1,6 +1,6 @@
 // Store our API endpoint inside queryUrl
-var queryUrl = "https://herokuenergyevolution.herokuapp.com/ee/solar_wind";
-fetch(request, {mode: 'cors'});
+var queryUrl = "/ee/co2";
+//fetch(request, {mode: 'cors'});
 
 d3.json(queryUrl).then(function(data) {
  // Once we get a response, send the data.features object to the createFeatures function
@@ -14,30 +14,30 @@ d3.json(queryUrl).then(function(data) {
 
 
 
-// Store our API endpoint inside queryUrl
-var queryUrl = "/ee/gas"
-//gas data
+// // Store our API endpoint inside queryUrl
+// //var queryUrl = "/ee/gas"
+// //gas data
 
-// file = 'static/data/countries.geojson';
-
-
-d3.json(queryUrl).then(function(data) {
-  file = "static/data/countries.geojson";
+// // file = 'static/data/countries.geojson';
 
 
-  d3.json(file).then(function(data) {
-    console.log(data);
-  });
-  // d3.json(file).then(countryPolygons => {
-  //   console.log(countryPolygons);
-  //   L.geojson(countryPolygons);
-  // });
+// d3.json(queryUrl).then(function(data) {
+//   file = "static/data/countries.geojson";
+
+
+//   d3.json(file).then(function(data) {
+//     console.log(data);
+//   });
+//   // d3.json(file).then(countryPolygons => {
+//   //   console.log(countryPolygons);
+//   //   L.geojson(countryPolygons);
+//   // });
 
 
   
-  // Once we get a response, send the data.features object to the createFeatures function
-  createFeatures(data.features);
-});
+//   // Once we get a response, send the data.features object to the createFeatures function
+//   createFeatures(data.features);
+// });
 
 
 
