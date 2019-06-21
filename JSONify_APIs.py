@@ -36,6 +36,12 @@ for feat in countries_co2_emissions['features']:
     if value_2017:
         feat['properties']["2017"] = value_2017
 
+    # for i in range(len(CO2_emissions_json)):
+    # for i in range(1):
+    #     dict = CO2_emissions_json[i]
+    #     for i in dict.values():
+    #         del myDict['NA']
+
 CO2_emissions_api = countries_co2_emissions
 
 # crude/NGL production API
