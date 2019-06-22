@@ -15,6 +15,7 @@ CO2_emissions_df = pd.read_sql("SELECT * FROM CO2_Emissions", engine)
 CO2_emissions_df_merged = CO2_emissions_df.merge(latlon_df, how='inner', on='Country')
 CO2_emissions_json = json.loads(CO2_emissions_df_merged.to_json(orient="records"))
 # Loop over GeoJSON features and add the new properties
+print(countries_co2_emissions['features'][0])
 for feat in countries_co2_emissions['features']:
     value_1990 = "NA"
     value_2000 = "NA"
@@ -28,31 +29,28 @@ for feat in countries_co2_emissions['features']:
             value_2010 = dict["2010"]
             value_2017 = dict["2017"]
             
-    if value_1990 != "NA":
+    if value_2017 == "NA":
+        del feat
+    else:
         feat['properties']["1990"] = value_1990
-    # else:
-    #     del feat['properties']["1990"]
-
-    if value_2000 != "NA":
         feat['properties']["2000"] = value_2000
-    # else:
-    #     del feat['properties']["2000"]
-
-    if value_2010 != "NA":
         feat['properties']["2010"] = value_2010
-    # else:
-    #     del feat['properties']["2010"]
-
-    if value_2017 != "NA":
         feat['properties']["2017"] = value_2017
-    # else:
-    #     del feat['properties']["2017"]
 
-    # for i in range(len(CO2_emissions_json)):
-    # for i in range(1):
-    #     dict = CO2_emissions_json[i]
-    #     for i in dict.values():
-    #         del myDict['NA']
+    # if value_2000 != "NA":
+    #     feat['properties']["2000"] = value_2000
+    # # else:
+    # #     del feat
+
+    # if value_2010 != "NA":
+    #     feat['properties']["2010"] = value_2010
+    # # else:
+    # #     del feat
+
+    # if value_2017 != "NA":
+    #     feat['properties']["2017"] = value_2017
+    # # else:
+    # #     del feat
 
 CO2_emissions_api = countries_co2_emissions
 
