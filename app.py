@@ -5,6 +5,10 @@ import json
 
 app = Flask(__name__)
 
+@app.route("/newmap")
+def new():
+  """Energy Evolution"""
+  return render_template("index2.html")
 
 @app.route("/")
 def index():
@@ -38,4 +42,5 @@ def total():
 
 if __name__ == "__main__":
     app.run()
+
 
