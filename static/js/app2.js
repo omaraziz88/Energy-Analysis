@@ -35,7 +35,7 @@ d3.json(APILink).then(function (data) {
     steps: 10,
 
     // q for quartile, e for equidistant, k for k-means
-    mode: "q",
+    mode: "e",
     style: {
       // Border color
       color: "#fff",
@@ -45,7 +45,7 @@ d3.json(APILink).then(function (data) {
 
     // Binding a pop-up to each layer
     onEachFeature: function (feature, layer) {
-      layer.bindPopup(feature.properties.ADMIN + ", " + "<br>CO2 Emissions:<br>" + feature.properties['2017']);
+      layer.bindPopup(feature.properties.ADMIN + ", " + "<br>CO2 Emissions:<br>" + feature.properties['2000']);
     }
   }).addTo(myMap);
 

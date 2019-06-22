@@ -34,7 +34,7 @@ d3.json(APILink).then(function (data) {
     steps: 10,
 
     // q for quartile, e for equidistant, k for k-means
-    mode: "q",
+    mode: "e",
     style: {
       // Border color
       color: "#fff",
